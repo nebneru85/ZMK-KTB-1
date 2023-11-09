@@ -1,6 +1,6 @@
 file_format: "1"
-id: ZMK-KTB
-name: ZMK-KTB
+id: ZMK KTB
+name: ZMK KTB
 type: shield
 url: https://clicketysplit.ca/pages/leeloo
 requires: [pro_micro]
