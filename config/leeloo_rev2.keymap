@@ -76,7 +76,7 @@ RGBOFF     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans     &trans     &tr
                                  &sys_reset &trans     &trans     &trans     &trans     &bootloader    &bt BT_CLR    &sys_reset
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN> &inc_dec_kp C_BRI_UP C_BRI_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
     };
