@@ -63,7 +63,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
                                  &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN> &inc_dec_kp C_FF C_RW>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
