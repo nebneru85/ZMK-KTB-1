@@ -50,7 +50,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
                             &mo DEFAULT   &mo LOWER  &mo RAISE  &lt 2 MINUS      &lt 2 EQUAL  &trans  &bt BT_CLR   &bt BT_NXT 
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
         };
 
         lower_layer {
@@ -63,7 +63,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
                                  &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN> &inc_dec_kp C_FF C_RW>;
         };
 
         raise_layer {
@@ -76,7 +76,7 @@ RGBOFF     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans     &trans     &tr
                                  &sys_reset &trans     &trans     &trans     &trans     &bootloader    &bt BT_CLR    &sys_reset
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN> &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
     };
