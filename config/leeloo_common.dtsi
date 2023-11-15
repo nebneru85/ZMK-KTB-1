@@ -12,7 +12,6 @@
         zmk,matrix_transform = &default_transform;
     };
 
-($row * NUMBER_OF_COLUMNS) + $column
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
