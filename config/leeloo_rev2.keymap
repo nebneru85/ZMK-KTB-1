@@ -52,7 +52,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
 &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T                                   &kp Y       &kp U      &kp I      &kp O      &kp P      &kp BSLH
 &kp TAB    &kp A      &kp S      &kp D      &kp F      &kp G                                   &kp H       &kp J      &kp K      &kp L      &kp SEMI   &kp TILDE
 &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                                   &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
-&kp LCTRL  &kp LGUI   &trans     &kp BSPC   &kp SPACE  &kp DEL       &trans        &kp LGUI    &trans      &kp SPACE  &trans     &trans     &trans     &kp RCTRL
+&kp LCTRL  &kp LGUI   &kp LALT   &kp BSPC   &kp SPACE  &kp DEL       &trans        &kp LGUI    &trans      &kp SPACE  &kp RALT   &trans     &trans     &kp RCTRL
                                  &mo DEFAULT   &mo LOWER  &mo RAISE  &trans        &lt 2 EQUAL &lt 1 SPACE &kp DEL    &kp BSPC
                                                                                    
             >;
@@ -73,7 +73,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
         
             >;
             
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         raise_layer {
@@ -88,7 +88,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
    
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
     };
