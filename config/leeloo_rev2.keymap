@@ -26,9 +26,6 @@
 #define LOWER   1
 #define RAISE   2
 
-#define KEYS_L 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34
-#define KEYS_R 7 8 9 10 11 12 13 21 22 23 24 25 26 27 35 36 37 38 39 40 41
-
 /*
  * Assign the cs-gpios pin to 4.
  * Uncomment these next few lines if implementing nice!view Displays
@@ -41,47 +38,6 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
 
 //////////////////////////////////////// Pin para RGB ws2812 ////////////////////////////////////////////////
 
-&pinctrl {
-    spi3_default: spi3_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
-        };
-    };
-
-    spi3_sleep: spi3_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>;
-            low-power-enable;
-        };
-    };
-};
-
-&spi3 {
-  compatible = "nordic,nrf-spim";
-  status = "okay";
-
-  pinctrl-0 = <&spi3_default>;
-  pinctrl-1 = <&spi3_sleep>;
-  pinctrl-names = "default", "sleep";
-
-  led_strip: ws2812@0 {
-    compatible = "worldsemi,ws2812-spi";
-    label = "WS2812";
-
-    /* SPI */
-    reg = <0>; /* ignored, but necessary for SPI bindings */
-    spi-max-frequency = <4000000>;
-
-    /* WS2812 */
-    chain-length = <28>; /* number of LEDs */
-    spi-one-frame = <0x70>;
-    spi-zero-frame = <0x40>;
-    color-mapping = <LED_COLOR_ID_GREEN
-                          LED_COLOR_ID_RED
-                          LED_COLOR_ID_BLUE>;
-  };
-};
-
 //////////////////////////////////////////////////
 
 
@@ -93,12 +49,12 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
         default_layer {
             label = " QWERTY";
             bindings = <
-
-&mo DEFAULT    &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &kp GRAV    &bt BT_NXT
-&mo LOWER      &kp TAB    &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT     &bt BT_CLR
-&mo RAISE      &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT   RGBON
-&trans         &kp LCTRL  &kp LGUI   &kp BSPC   &kp BSPC   &kp SPACE  &kp DEL        &trans     &kp SPACE  &trans     &trans     &trans     &kp RCTRL   RGBOFF
-                                                                                 
+&kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T                                   &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSLH
+&kp TAB    &kp A      &kp S      &kp D      &kp F      &kp G                                   &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp GRAV
+&kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                                   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+&kp LCTRL  &kp LGUI   &trans     &kp BSPC   &kp SPACE  &kp DEL       &trans        &kp LGUI    &trans     &kp SPACE  &trans     &trans     &trans     &kp RCTRL
+                                 &mo DEFAULT   &mo LOWER  &mo RAISE  &trans        &lt 2 EQUAL &lt 1 SPACE  &kp BSPC   &kp DEL
+                                                                                   
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -108,11 +64,13 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
             label = " Lower";
             bindings = <
 
-&mo DEFAULT    &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSLH  &trans
-&mo LOWER      &kp TAB    &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans     &trans    &trans
-&mo RAISE      &kp LSHFT  &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans     &trans    &trans
-&trans         &kp LCTRL  &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans     &trans    &trans
-            
+&trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSLH
+&trans     &trans     &trans     &trans     &trans     &trans                           &kp PG_UP  &kp HOME   &kp UP     &kp END    &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans                           &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                                 &trans     &trans     &trans     &trans     &trans     &trans     &trans     &kp F12
+
+        
             >;
             
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -122,11 +80,12 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
             label = " Raise";
             bindings = <
 
-&mo DEFAULT    RGBON      RGBOFF     RGBTOG     RGBBRD     RGBBRI     &kp F5         &kp F6         &kp F7         &kp F8         &kp F9         &kp F10        &kp F11    &trans 
-&mo LOWER      &trans     &trans     &trans     &trans     &trans     &trans         &kp PG_UP      &kp HOME       &kp UP         &kp END        &trans         &kp SQT    &trans
-&mo RAISE      RGBON      RGBTOG     RGBHUI     RGBSAI     RGBBRI     &trans         &kp PG_DN      &kp LEFT       &kp DOWN       &kp RIGHT      &trans         &trans     &trans
-&sys_reset     RGBOFF     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans     &sys_reset
-    
+&trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                               &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
+&trans     RGBON      RGBOFF     RGBTOG     RGBBRD     RGBBRI                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
+&trans     RGBON      RGBTOG     RGBHUI     RGBSAI     RGBBRI                               &trans        &trans        &trans        &trans        &trans        &trans
+&trans     RGBOFF     RGBEFF     RGBHUD     RGBSAD     RGBBRD     &trans         &trans     &kp LEFT      &kp SPACE     &kp RIGHT     &kp UP        &kp DOWN      &trans
+                                 &trans     &trans     &trans     &sys_reset     &sys_reset &bt BT_CLR    &bt BT_NXT    &kp F12
+   
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
