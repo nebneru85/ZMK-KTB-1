@@ -4,7 +4,7 @@
 if SHIELD_KMK_KTB_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "ZMK KTB"
+    default "ZMK_KTB"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
