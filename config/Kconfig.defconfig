@@ -1,10 +1,10 @@
 # Copyright (c) 2023 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_KMK_KTB_LEFT
+if SHIELD_LEELOO_REV2_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "ZMK_KTB"
+    default "KTBOT"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -14,7 +14,7 @@ endif
 if SHIELD_LEELOO_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "ZMK KTB"
+    default "KTBOT"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
