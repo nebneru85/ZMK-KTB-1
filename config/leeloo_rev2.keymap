@@ -84,7 +84,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
 &trans     RGBON      RGBTOG     RGBHUI     RGBBRD     RGBBRI                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
 &trans     RGBOFF     RGBSAI     RGBSAD     &trans     &trans                               &trans        &trans        &trans        &trans        &trans        &trans
 &trans     RGBEFF     &trans     &trans     &trans     &trans     &trans         &kp F12    &kp LEFT      &kp SPACE     &kp RIGHT     &kp UP        &kp DOWN      &trans
-                      &trans     &trans     &sys_reset &trans     &trans         &bt BT_NXT &bt BT_CLR    &sys_reset    &trans        &trans
+                      &trans     &trans     &sys_reset &bt BT_CLR &bt BT_NXT     &bt BT_NXT &bt BT_CLR    &sys_reset    &trans        &trans
    
             >;
 
