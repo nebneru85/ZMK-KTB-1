@@ -64,11 +64,11 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
             label = " Lower";
             bindings = <
 
-&trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSLH
-&trans     &trans     &trans     &trans     &trans     &trans                           &kp PG_UP  &kp HOME   &kp UP     &kp END    &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans                           &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
-                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                               &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSLH
+&trans     &trans     &trans     &trans     &trans     &trans                               &kp PG_UP  &kp HOME   &kp UP     &kp END    &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans                               &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                      &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
 
         
             >;
@@ -80,11 +80,11 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
             label = " Raise";
             bindings = <
 
-&trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                               &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
-&trans     RGBON      RGBTOG     RGBHUI     RGBBRD     RGBBRI                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
-&trans     RGBOFF     RGBSAI     RGBSAD     &bt BT_CLR &bt BT_NXT                           &trans        &trans        &trans        &trans        &trans        &trans
-&trans     RGBEFF     &kp LALT   &trans     &trans     &trans     &trans         &kp F12    &kp LEFT      &kp SPACE     &kp RIGHT     &kp UP        &kp DOWN      &trans
-                      &trans     &trans     &sys_reset &trans     &trans         &bt BT_NXT &bt BT_CLR    &sys_reset    &trans        &trans
+&trans     &kp F1     &kp F2     &kp F3     &kp F4       &kp F5                                      &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
+&trans     RGBON      RGBTOG     RGBHUI     RGBBRD       RGBBRI                                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
+&trans     RGBOFF     RGBSAI     RGBSAD     &bt BT_CLR   &bt BT_NXT                                  &trans        &trans        &trans        &trans        &trans        &trans
+&trans     RGBEFF     &kp LALT   &trans     &trans       &trans     &trans             &kp F12       &kp LEFT      &kp SPACE     &kp RIGHT     &kp UP        &kp DOWN      &trans
+                      &trans     &trans     &sys_reset   &trans     &trans             &bt BT_NXT    &bt BT_CLR    &sys_reset    &trans        &trans
    
             >;
 
