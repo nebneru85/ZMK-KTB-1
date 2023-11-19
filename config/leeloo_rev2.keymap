@@ -51,9 +51,9 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
             bindings = <
 &kp ESC    &kp Q      &kp W      &kp E      &kp R      &kp T                                   &kp Y       &kp U       &kp I      &kp O      &kp P      &kp BSLH
 &kp TAB    &kp A      &kp S      &kp D      &kp F      &kp G                                   &kp H       &kp J       &kp K      &kp L      &kp SEMI   &kp TILDE
-&kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                                   &kp N       &kp M       &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
+&kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                                   &kp ENTER   &kp N       &kp M      &kp COMMA  &kp DOT    &kp RSHFT
 &kp LCTRL  &kp LGUI   &kp LALT   &kp BSPC   &kp SPACE  &kp DEL    &mo DEFAULT      &kp BSPC    &trans      &kp SPACE   &kp RALT   &trans     &trans     &kp RCTRL
-                      &mo LOWER  &mo RAISE  &trans     &trans     &trans           &trans      &trans      &mo RAISE   &mo LOWER  &kp DEL
+                      &mo LOWER  &mo RAISE  &trans     &trans     &trans           &trans      &trans      &trans      &mo RAISE  &mo LOWER
                                                                                    
             >;
 
@@ -83,7 +83,7 @@ cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
 &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                               &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
 &trans     RGBON      RGBTOG     RGBHUI     RGBBRD     RGBBRI                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
 &trans     RGBOFF     RGBSAI     RGBSAD     &bt BT_CLR &bt BT_NXT                           &trans        &trans        &trans        &trans        &trans        &trans
-&trans     RGBEFF     &trans     &trans     &trans     &trans     &trans         &kp F12    &kp LEFT      &kp SPACE     &kp RIGHT     &kp UP        &kp DOWN      &trans
+&trans     RGBEFF     &kp LALT   &trans     &trans     &trans     &trans         &kp F12    &kp LEFT      &kp SPACE     &kp RIGHT     &kp UP        &kp DOWN      &trans
                       &trans     &trans     &sys_reset &trans     &trans         &bt BT_NXT &bt BT_CLR    &sys_reset    &trans        &trans
    
             >;
