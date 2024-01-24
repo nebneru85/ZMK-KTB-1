@@ -41,31 +41,6 @@ behaviors {
         #sensor-binding-cells = <0>;
         bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
     };
-
-    rgbknob: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        label = "ENCODER_RGB";
-        #sensor-binding-cells = <2>;
-        bindings = <&rgb_ug>, <&rgb_ug>;
-    };
-
-    Bluetooth: Bluetooth {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "BLUETOOTH";
-        #sensor-binding-cells = <0>;
-        bindings = <&bt BT_PRV>, <&bt BT_NXT>;
-
-        tap-ms = <5>;
-    };
-
-    Mous: Mous {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "MOUS";
-        #sensor-binding-cells = <0>;
-        bindings = <&mkp MB4>, <&mkp MB5>;
-
-        tap-ms = <5>;
-    };
 };
 
 //////////////////////////////////////// Pin para RGB ws2812 ////////////////////////////////////////////////
@@ -111,7 +86,7 @@ behaviors {
 &trans      &trans  &trans           &trans           &trans           &trans           &trans        &kp UP        &trans        &trans        &trans        &trans        &trans   &trans
             >;
 
-            sensor-bindings = <&Bluetooth>, <&rgbknob RGB_EFR RGB_EFF>;
+            sensor-bindings = <&none>, <&none>;
         };
 
         short_layer {
@@ -123,7 +98,7 @@ behaviors {
 &trans       &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&Mous>, <&Mous>;
+            sensor-bindings = <&none>, <&none>;
         };
     };
 };
