@@ -92,7 +92,7 @@ behaviors {
         short_layer {
             label = " Short";
             bindings = <
-&sys_reset   &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &sys_reset
+&sys_reset   &trans  &kp Q  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &sys_reset
 &bootloader  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &bootloader
 &trans       &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans       &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
